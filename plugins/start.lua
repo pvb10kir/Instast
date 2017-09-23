@@ -54,10 +54,10 @@ local function do_keyboard_private()
 	        {text = '🔰کانال و گروه', callback_data = '!chgp'},
         },
 		{
-				{text = '⚒آغاز چت با ادمین', url = '/chat'},
+				{text = '⚒آغاز چت با ادمین', callback_data = '/chat'},
 	    },
 	{
-				{text = '➖صفحه دوم➖', url = '!2page'},
+				{text = '➖صفحه دوم➖', callback_data = '!2page'},
 	    },
 	}		
     return keyboard
