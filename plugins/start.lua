@@ -54,7 +54,7 @@ local function do_keyboard_private()
 	        {text = '🔰کانال و گروه', callback_data = '!chgp'},
         },
 		{
-				{text = '⚒آغاز چت با ادمین', callback_data = '/chat'},
+				{text = '⚒آغاز چت با ادمین', callback_data = '!cat'},
 	    },
 	{
 				{text = '➖صفحه دوم➖', callback_data = '!2page'},
