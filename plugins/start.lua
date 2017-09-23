@@ -1,29 +1,42 @@
-local function do_keyboard_robot()
+local function do_keyboard_chgp()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'Sphero Number(c)', callback_data = '!share'},
+    					{text = '🔮کانال های مافیا', callback_data = '!ch'},
     					},
     					{
-    		    		{text = 'Best Antispam Ch', callback_data = '!buygroup'},
-{text = 'FreeGroup📦🔮', callback_data = '/chat'},
-    		    		{text = 'Sphero Support', url = 'https://telegram.me/joinchat/C67c0D-5QEEIerZWKv1G9g'},
+{text = 'لیست گروه ها📦', callback_data = '!gp'},
 	    },
 	    {
-	    {text = '🔙Back', callback_data = '!home'}
+	    {text = '🔙بازگشت', callback_data = '!home'}
         }
     }
     return keyboard
 end
-local function do_keyboard_date()
+local function do_keyboard_mods()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = 'Refresh🔄', callback_data = '!date'},
+    		    		{text = 'پابلیک 1🔄', callback_data = '!p1'},
+	    },
+	{
+    		    		{text = 'پابلیک 2🔄', callback_data = '!p2'},
+	    },
+	{
+    		    		{text = 'پابلیک 3🔄', callback_data = '!p3'},
+	    },
+	{
+    		    		{text = 'نایف🔄', callback_data = '!knife'},
+	    },
+	{
+    		    		{text = 'ایم و ای دبل🔄', callback_data = '!awp'},
+	    },
+	{
+    		    		{text = 'جیل🔄', callback_data = '!jail'},
 	    },
 	
 	    {
-	    {text = '🔙Back', callback_data = '!home'}
+	    {text = '🔙بازگشت', callback_data = '!home'}
         }
     }
     return keyboard
@@ -32,17 +45,20 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     {
-	        {text = '🔥برای پیام رسانی کلیک کنید🔮', callback_data = '/chat'},
+	        {text = '🔱لیست سرور ها', callback_data = '!server'},
         },
   {
-	        {text = '🔥شماره بنده🔮', callback_data = '!share'},
+	        {text = 'ℹ️لیست مادراتور ها', callback_data = '!mods'},
         },
--- {
---	        {text = '🔥ساعت و تاریخ🔮', callback_data = '!date'},
-  --      },
-	--[[	{
-				{text = '�برای خرید ربات کلیک کنید�', url = 'https://telegram.me/sphero_ch'},
-	    },]]
+ {
+	        {text = '🔰کانال و گروه', callback_data = '!chgp'},
+        },
+		{
+				{text = '⚒آغاز چت با ادمین', url = '/chat'},
+	    },
+	{
+				{text = '➖صفحه دوم➖', url = '!2page'},
+	    },
 	}		
     return keyboard
 end
@@ -56,16 +72,9 @@ local function do_keyboard_startme()
     }
     return keyboard
 end
-local function do_keyboard_channel()
+local function do_keyboard_server()
     local keyboard = {}
     keyboard.inline_keyboard = {
-    	{
-    		{text = 'mobina Khoshgele', url = 'https://telegram.me/Mobina_Khoshgele'},
-	    },
-	{
-	        		{text = 'Da3sHacker', url = 'https://telegram.me/Da3shacker'},
-
-    },
 		{
 	    {text = '🔙Home', callback_data = '!home'},
         }
@@ -79,7 +88,8 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[📍برای پیام رسانی اینجا بزنید👇]]
+            local message = [[📍به ربات رسمی مافیا خوش آمدید.
+			صفحه 1 از 2]]
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
@@ -93,49 +103,60 @@ local action = function(msg, blocks, ln)
         local query = blocks[1]
         local msg_id = msg.message_id
         local text
-        if query == 'channel' then
-            local text = 'ایدی های فروشی💎'
-            local keyboard = do_keyboard_channel()
+        if query == 'server' then
+            local text = [[*✅ ایپی سرور های  کانتر استرایک 1.6 مافیا 👇🏻
+
+🔹 با تایپ server/ درون هر یک از سرور های مافیا میتوانید به  سرور مورد نظر متصل شوید.
+
+
+✔️MAFIA | Public #1 Server
+📍IP : 10.48.9.70:27001
+
+✔️MAFIA | Public #2 Server
+📍IP : 10.48.9.70:27002
+
+✔️MAFIA | Public #3 Server
+📍IP : 10.48.9.71:27000
+
+✔️MAFIA | Pro AwperS
+📍IP : 10.48.9.70:27005
+
+✔️MAFIA | Knife Server
+📍IP : 10.48.9.70:27004
+
+✔️MAFIA | jail break #1 Server
+📍IP : 10.48.9.70:27013
+
+✔️ MAFIA | Jail break #2 Server
+ 📍 IP : 10.48.9.71:27008
+
+✅ ایپی سرور سمپ ( جی تی ای آنلاین ) مافیا:
+
+✔️MAFIA-GAME RPG Server
+📍IP : 10.201.72.21:7777
+*
+*
+🗣 MAFIA Team Speak
+📍IP : 10.48.9.75:2000
+✔️ @MAFIA_CS
+✔️ @MAFIA_SAMP
+✔️  WWW.CS-MAFIA.IR*]]
+            local keyboard = do_keyboard_server()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-
-	if query == 'date' then
-	local url , res = http.request('http://api.blacklife-team.ir/time/')
-	if res ~= 200 then return "No connection" end
-	local jdat = json:decode(url)
-	local text = 'Time | ساعت : '..jdat.result.time..'\nDate | تاریخ : '..jdat.result.date..'\n@BlacklifeTM'
-	 local keyboard = do_keyboard_date()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-		end
-	local url , res = https.request('https://api.telegram.org/bot406975381:AAFPCe756NYODvvlb9801mXr1UU4gMVfqtM/getchatmember?chat_id=-1001134110205&user_id='..msg.chat.id..' ')
-if res ~= 200 then
-  return "No connection"
-end
-local jdat = json:decode(url)
-if jdat.result.status == "left" or jdat.result.status == "kicked" or not jdat.ok then
-  api.sendMessage(msg.chat.id, "سلام دوست عزیز به نظر میرسد که در کانال ربات عضو نیستید پس از شما تقاضا میشود که در کانال جوین شوید\nبرای جوین شدن لینک زیر را کلیک کنید\nhttps://telegram.me/joinchat/DWQPej_1dbViXxXb9dfF1g", true)
-  print('\27[36mNot valid: Channel not found\27[39m')
-
-  return false
-end
-
-if query == 'robot' then
-            local text = [[اسفرو رباتی امن برای گروه های شما است
-بصورت کاملا رایگان فقط کافیست از همین بخش گزینه
-freegroup
-را لمس کرده و لینک گروه خود را بفرستید
-دیگر امکانات ربات👇]]
+if query == 'mods' then
+            local text = [[در این قسمت میتوانید مادراتور های هر سرور را مشاهده بفرمایید.☑️ ]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'buygroup' then
-            local text = [[_Best AntiSpam Channels📺_]]
+if query == 'chgp' then
+            local text = [[لیست کانال و گروه های مافیا📢]]
             local keyboard = do_keyboard_buygroup()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
-            local text = [[*Welcome Back To Home*
-*UnknoWnCyber Official Bot 🔥*]]
+            local text = [[*به صفحه اول خوش برگشتید.
+			صفحه 1 از 2*]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
@@ -145,7 +166,7 @@ if db:get("share:"..msg.chat.id) then
 else
 db:setex("share:"..msg.chat.id, 60, 'true')
         if query == 'share' then
-     api.sendContact(msg.from.id, '+989309649221', '🔸~[S]epehr')
+     api.sendContact(msg.from.id, '+989305656691', '🔸پشتیبانی مافیا')
 end
 			end
     end
