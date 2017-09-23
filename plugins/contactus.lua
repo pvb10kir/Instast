@@ -1,4 +1,3 @@
-
 local function do_keyboard_endchat()
     local keyboard = {}
     keyboard.inline_keyboard = {
@@ -21,7 +20,7 @@ end
 local action = function(msg,blocks, ln)
 local msg_id = msg.message_id
 local user_id = msg.chat.id
-local idfsend = -1001098211185-- Your Group For Send User Messages
+local idfsend = -1001098211185 -- Your Group For Send User Messages
 local stype = supergroup -- set the type of location for send message ex: supergroup, private, group
 local hash = 'pm:user'
 local chat_info = db:hget(hash,user_id)
