@@ -56,10 +56,10 @@ local function do_keyboard_sacc()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = '➖ شرایط', callback_data = '!flwer2'},
+    		    		{text = '➖ شرایط', callback_data = '!sacc2'},
 	    },
 	    {
-	    {text = '🔙', callback_data = '!page2'}
+	    {text = '🔙', callback_data = '!home'}
         }
     }
     return keyboard
