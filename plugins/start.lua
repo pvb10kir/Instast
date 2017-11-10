@@ -1,4 +1,4 @@
-local function do_keyboard_page2()
+local function do_keyboard_page()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
@@ -26,7 +26,7 @@ local function do_keyboard_ta()
     		   {text = '➖ موافقم', callback_data = '/chat'},
 	    },
 {
-	    {text = '🔙', callback_data = '!page2'}
+	    {text = '🔙', callback_data = '!page'}
         }
 }
    return keyboard
@@ -35,7 +35,7 @@ local function do_keyboard_ads()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-	    {text = '🔙', callback_data = '!page2'}
+	    {text = '🔙', callback_data = '!page'}
         }
 }
    return keyboard
@@ -44,10 +44,10 @@ local function do_keyboard_tab()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = '➖ شرایط', callback_data = '!tab2'},
+    		    		{text = '➖ شرایط', callback_data = '!ta'},
 	    },
 	    {
-	    {text = '🔙', callback_data = '!page2'}
+	    {text = '🔙', callback_data = '!page'}
         }
     }
     return keyboard
@@ -137,7 +137,7 @@ local function do_keyboard_private()
 				{text = '➖ آفر های ویژه', callback_data = '!off'},
 	    },
 	{
-				{text = 'صفحه دوم🔜', callback_data = '!2page'},
+				{text = 'صفحه دوم🔜', callback_data = '!page'},
 	    },
 	}		
     return keyboard
@@ -206,7 +206,7 @@ if query == 'sac' then
 end
 if query == 'flwer' then
             local text = [[تعرفه و قیمت خرید فالوور از ما🌟]]
-            local keyboard = do_keyboard_flwrr()
+            local keyboard = do_keyboard_flwer()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'flwe' then
@@ -255,7 +255,7 @@ if query == 'ads' then
             local keyboard = do_keyboard_ads()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'page2' then
+if query == 'page' then
             local text = [[➖ سلام خدمت شما دوست عزیز، به ربات رسمی اینستا استور خوش امدید
 			صفحه *2* از *2*]]
             local keyboard = do_keyboard_page2()
@@ -275,7 +275,7 @@ return {
 	    '^/(start)$',
 	   -- '^/(help)$',
 	    	'^###cb:!(ads)',
-	    	'^###cb:!(page2)',
+	    	'^###cb:!(page)',
 		'^###cb:!(sacc)',
 		'^###cb:!(sac)',
 		'^###cb:!(tab)',
