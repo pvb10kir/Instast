@@ -261,14 +261,8 @@ if query == 'page2' then
             local keyboard = do_keyboard_page2()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if db:get("share:"..msg.chat.id) then
-    local wtf = db:ttl("share:"..msg.chat.id)
- api.sendMessage(msg.chat.id, 'شما به تازگی شماره دریافت کرده اید\n*'..wtf..'* ثانیه دیگر امتحان کنید.', true)
-else
-db:setex("share:"..msg.chat.id, 60, 'true')
         if query == 'share' then
      api.sendContact(msg.from.id, '+989305656691', '🔸G3N!U5')
-end
 			end
     end
 
