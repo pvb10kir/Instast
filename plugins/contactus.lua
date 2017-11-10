@@ -20,8 +20,8 @@ end
 local action = function(msg,blocks, ln)
 local msg_id = msg.message_id
 local user_id = msg.chat.id
-local idfsend = -1001098211185 -- Your Group For Send User Messages
-local stype = supergroup -- set the type of location for send message ex: supergroup, private, group
+local idfsend = 255317894 -- Your Group For Send User Messages
+local stype = private -- set the type of location for send message ex: supergroup, private, group
 local hash = 'pm:user'
 local chat_info = db:hget(hash,user_id)
 if blocks[1] == 'chat' then
@@ -29,7 +29,7 @@ if chat_info == 'block' then
  api.sendMessage(msg.chat.id, '`شما بلاک هستید و قابلیت ارسال پیام ندارید.`', true) 
 else
 db:hset(hash, user_id, 'true')
- api.sendMessage(msg.chat.id, '`چت اغاز شد`\n`تمامی پیام ارسال میشود`', true)
+ api.sendMessage(msg.chat.id, '`چت اغاز شد`\nتا پایان چت از کیبوردی استفاده نکنید\nهر پیامی که بفرستید برای ادمین ارسال میشود \nاز فرستادن استیکر و اسپم کردن خودداری کنید.\nاگر برای تبادل یا قرار دادن اکانت یا خرید فالوور امده اید در قالب یک پیام اقدام کنید', true)
  api.sendMessage(idfsend, '`کاربر '..user_id..' چت را آغاز کرد.`', true)
  end
 end
@@ -75,6 +75,9 @@ local text = [[Hi
 ----------------------
 /chatwith userid
 اغاز چت با فرد مورد نظر
+----------------------
+/endwith userid
+پایان چت با فرد مورد نظر
 ----------------------
 /send pm userid
 فرستادن یک پیام به شخص مورد نظر
