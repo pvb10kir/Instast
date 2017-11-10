@@ -19,7 +19,7 @@ local function do_keyboard_page2()
 }
     return keyboard
 end
-local function do_keyboard_tab2()
+local function do_keyboard_ta()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
@@ -56,7 +56,7 @@ local function do_keyboard_sacc()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = '➖ شرایط', callback_data = '!sacc2'},
+    		    		{text = '➖ شرایط', callback_data = '!sac'},
 	    },
 	    {
 	    {text = '🔙', callback_data = '!home'}
@@ -64,7 +64,7 @@ local function do_keyboard_sacc()
     }
     return keyboard
 end
-local function do_keyboard_sacc2()
+local function do_keyboard_sac()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
@@ -80,7 +80,7 @@ local function do_keyboard_flwer()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = '➖ شرایط', callback_data = '!flwer2'},
+    		    		{text = '➖ شرایط', callback_data = '!flwe'},
 	    },
 	    {
 	    {text = '🔙', callback_data = '!home'}
@@ -88,7 +88,7 @@ local function do_keyboard_flwer()
     }
     return keyboard
 end
-local function do_keyboard_flwer2()
+local function do_keyboard_flwe()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
@@ -104,7 +104,7 @@ local function do_keyboard_off()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = '➖ خرید 3،6 و 10 کا', callback_data = '!off2'},
+    		    		{text = '➖ خرید 3،6 و 10 کا', callback_data = '!of'},
 	    },
 	    {
 	    {text = '🔙', callback_data = '!home'}
@@ -112,7 +112,7 @@ local function do_keyboard_off()
     }
     return keyboard
 end
-local function do_keyboard_off2()
+local function do_keyboard_of()
     local keyboard = {}
     keyboard.inline_keyboard = {
 	    {
@@ -179,11 +179,11 @@ local action = function(msg, blocks, ln)
             local keyboard = do_keyboard_off()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'off2' then
+if query == 'of' then
             local text = [[برای خرید های 3، 6 و 10 کا : (مزایای ویژه)
 500 لایک رایگان از سوی ما دریافت میکنید
 و آدرس یک سایت خارجی برای دریافت فالوور (هر نیم ساعت یک بار بین 4 - 50 فالوور به صورت شانسی به اکانتتون واریز میکنه)]]
-            local keyboard = do_keyboard_off2()
+            local keyboard = do_keyboard_of()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'sacc' then
@@ -191,7 +191,7 @@ if query == 'sacc' then
             local keyboard = do_keyboard_sacc()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'sacc2' then
+if query == 'sac' then
             local text = [[به نام خدا، 
 			شرایط گذاشتن بنر فروش اکانت اینستاگرام شما در کانال اینستا استور
 ➖ ابتدا ما به شما یک بنر میدیم شما باید برای اون بنر 150 سین بزنید
@@ -201,15 +201,15 @@ if query == 'sacc2' then
 ➖ بنر شما تا زمان فروش در کانال ما باقی خواهد ماند
 اگر با این شرایط مخالفتی ندارید بر روی دکمه `"موافقم"` کلیک کنید سپس شما به چت مستقیم با ادمین انتقال داده میشوید و میتوانید با ادمین ربات صحبت کنید
 			((توجه : اگر برای شوخی یا هر چیز دیگه ای روی دکمه موافقم بزنید برای همیشه از ربات بلاک خواهید شد.))]]
-            local keyboard = do_keyboard_sacc2()
+            local keyboard = do_keyboard_sac()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'flwer' then
             local text = [[تعرفه و قیمت خرید فالوور از ما🌟]]
-            local keyboard = do_keyboard_flwer()
+            local keyboard = do_keyboard_flwrr()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'flwer2' then
+if query == 'flwe' then
             local text = [[قیمت ها :
 
 100 فالوور > 2 ت
@@ -223,7 +223,7 @@ if query == 'flwer2' then
 برای کسب اطمینان ابتدا 20 الی 50 فالوور به صورت رایگان به شما داده میشود.
 فالوور ها کاملا ایرانی بوده و فعال هستند
 			((توجه : اگر برای شوخی یا هر چیز دیگه ای روی دکمه موافقم بزنید برای همیشه از ربات بلاک خواهید شد.))]]
-            local keyboard = do_keyboard_flwer2()
+            local keyboard = do_keyboard_flwe()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
@@ -237,7 +237,7 @@ if query == 'tab' then
             local keyboard = do_keyboard_tab()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'tab2' then
+if query == 'ta' then
             local text = [[به نام خدا، 
 			شرایط تبادل با کانال اینستا استور
 ➖ کانال در ارتباط با موضوع کانال ما یا حداقل نزدیک به آن باشد
@@ -247,7 +247,7 @@ if query == 'tab2' then
 ➖ بنر ها در ساعات تایین شده به صورت پست آخر گذاشته و سپس پاک میشوند
 اگر با این شرایط مخالفتی ندارید بر روی دکمه `"موافقم"` کلیک کنید سپس شما به چت مستقیم با ادمین انتقال داده میشوید و میتوانید با ادمین ربات صحبت کنید
 			((توجه : اگر برای شوخی یا هر چیز دیگه ای روی دکمه موافقم بزنید برای همیشه از ربات بلاک خواهید شد.))]]
-            local keyboard = do_keyboard_tab2()
+            local keyboard = do_keyboard_ta()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'ads' then
@@ -277,13 +277,13 @@ return {
 	    	'^###cb:!(ads)',
 	    	'^###cb:!(page2)',
 		'^###cb:!(sacc)',
-		'^###cb:!(sacc2)',
+		'^###cb:!(sac)',
 		'^###cb:!(tab)',
-		'^###cb:!(tab2)',
+		'^###cb:!(ta)',
 		'^###cb:!(off)',
-	   	'^###cb:!(off2)',
+	   	'^###cb:!(of)',
 	    	'^###cb:!(flwer)',
-		'^###cb:!(flwer2)',
+		'^###cb:!(flwe)',
 		'^###cb:!(share)',
 
     }
