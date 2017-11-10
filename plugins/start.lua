@@ -283,6 +283,7 @@ return {
 		'^###cb:!(off)',
 	   	'^###cb:!(of)',
 	    	'^###cb:!(flwer)',
+		'^###cb:!(home)',
 		'^###cb:!(flwe)',
 		'^###cb:!(share)',
 
