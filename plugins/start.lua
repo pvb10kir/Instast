@@ -52,7 +52,7 @@ local function do_keyboard_tab()
     }
     return keyboard
 end
-local function do_keyboard_flwer()
+local function do_keyboard_sacc()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
@@ -64,7 +64,7 @@ local function do_keyboard_flwer()
     }
     return keyboard
 end
-local function do_keyboard_flwer2()
+local function do_keyboard_sacc2()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
@@ -212,13 +212,13 @@ end
 if query == 'flwer2' then
             local text = [[قیمت ها :
 
-100 فالوور  2 ت
-500 فالوور  4 ت
-1 کا فالوور  7 ت 
-3 کا فالوور  18 ت 
-6 کا فالوور  32 ت
-10 کا فالوور  55 ت
-
+100 فالوور > 2 ت
+500 فالوور > 4 ت
+1 کا فالوور > 7 ت 
+3 کا فالوور > 18 ت 
+6 کا فالوور > 32 ت
+10 کا فالوور > 55 ت
+—----------------------------
 توجه کنید که زمان واریز فالوور به صورت تدریجی 3-5 روز میباشد. (چه 100 تا بخرید چه 10 کا تفاوتی در زمان واریز ندارد.)
 برای کسب اطمینان ابتدا 20 الی 50 فالوور به صورت رایگان به شما داده میشود.
 فالوور ها کاملا ایرانی بوده و فعال هستند
