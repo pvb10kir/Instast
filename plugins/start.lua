@@ -262,7 +262,7 @@ if query == 'page' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-     api.sendContact(msg.from.id, '+989305656691', '🔸G3N!U5')
+     api.sendContact(msg.from.id, '+989309649221', '🔸G3N!U5')
 			end
     end
 
