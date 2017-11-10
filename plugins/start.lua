@@ -26,7 +26,7 @@ local function do_keyboard_ta()
     		   {text = '➖ موافقم', callback_data = '/chat'},
 	    },
 {
-	    {text = '🔙', callback_data = '!page'}
+	    {text = '🔙', callback_data = '!home'}
         }
 }
    return keyboard
@@ -258,7 +258,7 @@ end
 if query == 'page' then
             local text = [[➖ سلام خدمت شما دوست عزیز، به ربات رسمی اینستا استور خوش امدید
 			صفحه *2* از *2*]]
-            local keyboard = do_keyboard_page2()
+            local keyboard = do_keyboard_page()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
