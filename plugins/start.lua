@@ -257,7 +257,7 @@ if query == 'ads' then
 end
 if query == 'page2' then
             local text = [[➖ سلام خدمت شما دوست عزیز، به ربات رسمی اینستا استور خوش امدید
-			صفحه *2* از *2*]]]
+			صفحه *2* از *2*]]
             local keyboard = do_keyboard_page2()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
