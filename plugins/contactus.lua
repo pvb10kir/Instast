@@ -32,7 +32,6 @@ db:hset(hash, user_id, 'true')
  api.sendMessage(255317894, '`کاربر '..user_id..' چت را آغاز کرد.`', true)
 end
 end
-end
 if blocks[1] == 'chatwith' then
 	db:hset(hash, blocks[2], 'true')
 	api.sendKeyboard(blocks[2], '`چت اغاز شد`\n`به دستور ادمین ربات چتی با شما آغاز شد برای ادامه چت پیام خود را تایپ کنید و برای خروج روی دکمه زیر بزنید.`'  ,do_keyboard_chatwith(), true)
