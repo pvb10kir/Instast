@@ -22,16 +22,14 @@ local msg_id = msg.message_id
 local user_id = msg.chat.id
 local hash = 'pm:user'
 local chat_info = db:hget(hash,user_id)
-if blocks[1] == 'chat' then
-if chat_info == 'block' then 
+if blocks[1] == 'chat' and db:hget(hash, user_id) then
+api.sendMessage(255317894, '`ابتدا باید چت قبلی را ببندید`', true)
+elseif chat_info == 'block' then 
  api.sendMessage(msg.chat.id, '`شما بلاک هستید و قابلیت ارسال پیام ندارید.`', true) 
-else
+else 
 db:hset(hash, user_id, 'true')
  api.sendMessage(msg.chat.id, '`چت اغاز شد`\nتا پایان چت از کیبوردی استفاده نکنید\nهر پیامی که بفرستید برای ادمین ارسال میشود \nاز فرستادن استیکر و اسپم کردن خودداری کنید.\nاگر برای تبادل یا قرار دادن اکانت یا خرید فالوور امده اید در قالب یک پیام اقدام کنید', true)
  api.sendMessage(255317894, '`کاربر '..user_id..' چت را آغاز کرد.`', true)
-if db:hget(hash, user_id) then
-	return false
-api.sendMessage(255317894, '`ابتدا باید چت قبلی را ببندید`', true)
 end
 end
 end
