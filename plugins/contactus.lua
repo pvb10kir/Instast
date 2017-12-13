@@ -33,7 +33,7 @@ db:hset(hash, user_id, 'true')
 end
 local hash = 'pm:user'
 local user_id = msg.chat.id
-if blocks[1] == 'chat' and db:get(hash, user_id, 'true') then
+if blocks[1] == 'chat' and db:hget(hash, user_id, 'true') then
 api.sendMessage(255317894, '`ابتدا باید چت قبلی را ببندید`', true)
 end
 if blocks[1] == 'chatwith' then
